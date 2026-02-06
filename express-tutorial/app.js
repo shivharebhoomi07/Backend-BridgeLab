@@ -5,8 +5,15 @@ const userRoutes = require('./routes/users');
 
 const PORT = 3000;
 
-// Middleware to parse JSON
+// Built-in middleware
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+// Custom logger middleware
+app.use((req, res, next) => {
+  console.log(`${req.method} request to ${req.url} at ${new Date().toISOString()}`);
+  next();
+});
 
 // Home route
 app.get('/', (req, res) => {
@@ -15,6 +22,11 @@ app.get('/', (req, res) => {
 
 // User routes
 app.use('/users', userRoutes);
+
+// 404 handler
+app.use((req, res) => {
+  res.status(404).send('Page not found');
+});
 
 // Start server
 app.listen(PORT, () => {
