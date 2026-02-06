@@ -22,7 +22,10 @@ app.use((req, res, next) => {
 
 // Home route
 app.get('/', (req, res) => {
-  res.send('Welcome to Express Framework Basics');
+  res.render('index', {
+    title: 'Express Framework Basics',
+    message: 'Welcome to Express with EJS!'
+  });
 });
 
 // User routes
