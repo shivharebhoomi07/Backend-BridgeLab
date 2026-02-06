@@ -1,12 +1,20 @@
 const express = require('express');
 const app = express();
 
+const userRoutes = require('./routes/users');
+
 const PORT = 3000;
 
-// Basic route
+// Middleware to parse JSON
+app.use(express.json());
+
+// Home route
 app.get('/', (req, res) => {
-  res.send('Hello World! This is my first Express app.');
+  res.send('Welcome to Express Framework Basics');
 });
+
+// User routes
+app.use('/users', userRoutes);
 
 // Start server
 app.listen(PORT, () => {
