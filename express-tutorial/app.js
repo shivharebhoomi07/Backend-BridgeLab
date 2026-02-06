@@ -8,6 +8,7 @@ const PORT = 3000;
 // Built-in middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static('public'));
 
 // Custom logger middleware
 app.use((req, res, next) => {
