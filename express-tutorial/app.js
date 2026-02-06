@@ -1,9 +1,13 @@
+const path = require('path');
 const express = require('express');
 const app = express();
 
 const userRoutes = require('./routes/users');
 
 const PORT = 3000;
+// View engine setup
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
 
 // Built-in middleware
 app.use(express.json());
