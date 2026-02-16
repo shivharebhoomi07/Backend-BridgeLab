@@ -71,3 +71,24 @@ GET is used to **retrieve data** from the server. It should not modify any data.
 ```http
 GET /api/users?page=1&limit=10 HTTP/1.1
 Host: example.com
+
+
+### Exercise Summary
+
+1. **Exercise 1:** Filtering books using query parameters (`author`, `year`)
+2. **Exercise 2:** Input validation middleware for checking valid year range
+3. **Exercise 3:** Pagination using `page` and `limit` query parameters
+4. **Exercise 4:** Full CRUD operations for a new resource (Authors)
+5. **Exercise 5:** Search endpoint to find books by title
+
+Each exercise runs independently and demonstrates a specific REST API concept using Express.js.
+
+---
+
+## Additional Resources
+
+- Express.js Documentation: https://expressjs.com/  
+- REST API Tutorial: https://restfulapi.net/  
+- HTTP Status Codes: https://httpstatuses.com/  
+- MDN HTTP Methods: https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods
+
